@@ -1,1 +1,1 @@
-web: nodemon ./blog.js  
+web: nodemon ./blog.js    
