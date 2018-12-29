@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include("partial/blogheadInclude") -%>
+<style>
+	.content{
+		margin-left:7%;
+		margin-right:7%;
+		margin-top:3%;
+	}
+	.compose{
+		color:pink;
+	}
+	.compose:hover{
+		color:pink;
+		text-decoration:none;
+	}
+	
+</style>
+</head>
+
+
+
+
+
+
+
+<body>
+<!–– Loop for all title and content    ––>
+
+<%- include("partial/navInclude") -%>
+    
+<div class="content">
+    <h1>Home</h1>
+    <p><%- content %></p>
+    <button class="btn-lg btn-danger"><a class="compose" href="/compose">Writing Link</a></button>
+    <br><br>
+    
+    <% for(var i=0; i<diarys.length;i++){  %> 
+ <form  action="/compose/ok/<%=  diarys[i].title %>" method="post"> 
+	<h1><%=  diarys[i].title %> </h1>
+	<p><%=   diarys[i].content.substring(0,100) %> (Only First 100 Words)<button class="btn btn-link" style=" color:red;border:0px solid transparent;" type="submit">Read More</button></p>
+	<input type="hidden" name="myid" value="<%= diarys[i]._id%>">
+</form>
+    <br><br>
+    <% } %> 
+</div>
+</body>
+
+  <script type="text/javascript">
+    document.getElementsByTagName("h1")[0].innerHTML="Home";
+  </script>
+  
+</html>

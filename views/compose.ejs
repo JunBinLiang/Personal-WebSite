@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include("partial/blogheadInclude") -%>
+
+
+<style>
+	.content{
+		margin-left:7%;
+		margin-right:7%;
+		margin-top:3%;
+	}
+	.title{
+		width:100%;
+	}
+	.title:focus{
+		background-color:Chartreuse;
+	}
+	.typing:focus{
+		background-color:Cornsilk;
+		   }
+	
+</style>
+</head>
+
+	<body>
+		<%- include("partial/navInclude") -%>
+		
+<div class="content">
+		<h1>Compose</h1>
+		<p style="font-weight:bold;">Title</p>
+		
+	<form action="/compose" method=post>
+		
+		<input type="text" name="title" class="title" autocomplete="off">
+		<br><br><br>
+		
+		<textarea name="journal" rows="7" cols="150" class="typing">
+        </textarea>
+        
+        <br>
+        PassWord:<input type="password" name="password" autocomplete="off"><br><br>
+			<button class="btn btn-lg btn-info" type="submit">Publish</button>
+	</form>
+</div>
+	</body>
+
+</html>

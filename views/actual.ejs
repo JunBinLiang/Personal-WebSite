@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include("partial/blogheadInclude") -%>
+
+
+<style>
+	.content{
+		margin-left:7%;
+		margin-right:7%;
+		margin-top:3%;
+	}
+	.myNav{
+	height: 100px;
+	  }
+
+.navbar-brand{
+	font-size: 50px;
+}
+
+.nav-link{
+	font-size: 20px;
+	margin:15px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: orange;
+}
+	button{
+		margin-left:100px;
+	}
+	
+	
+</style>
+
+
+</head>
+
+
+
+
+
+
+<body>
+<%- include("partial/navInclude") -%>
+
+<div class="content">
+<h1><%- collection[0].title %></h1>
+<br>
+<p><%- collection[0].content %></p>
+</div>
+
+<form action="/delete" method="post">
+<button class="btn-lg btn-warning" name="deleteButton" value="<%- collection[0]._id %>">Delete</button>
+</form>
+
+</body>
+</html>
