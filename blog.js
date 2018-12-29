@@ -228,7 +228,14 @@ app.post("/delete", function(request,response){
 
 
 
-app.listen(3000||process.env.PORT,function(){
+//app.listen(3000||process.env.PORT,function(){
+	//console.log("Success Server");
+	//console.log("rs command re-start server");
+//});
+
+
+app.listen(process.env.PORT,function(){
 	console.log("Success Server");
 	console.log("rs command re-start server");
 });
+
