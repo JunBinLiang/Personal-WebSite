@@ -1,1 +1,1 @@
-web: node blog.js
+web: node ./blog.js
