@@ -1,1 +1,1 @@
-web: node blgo.js
+web: node app.js

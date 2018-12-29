@@ -1,4 +1,4 @@
-//Initialization
+//Initialization    https://rocky-gorge-12412.herokuapp.com/
 const mongoose = require('mongoose');
 //local
 //mongoose.connect('mongodb://localhost:27017/blogDB', {useNewUrlParser: true});
