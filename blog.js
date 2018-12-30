@@ -31,7 +31,7 @@ const diaryCollection=mongoose.model("Diarys",diarySchema);
 //  <%= escapes html by default (therefore your br tag is changed to it's escaped equivalent).
 
 
-var aboutContent = "The content of the about page.<br> First, let me introduce myself. <br><br>My name is JunBin Liang. A first year CS student in CUNY queens college who majoring mathmatical and computer science. I like to learn a lot of new things for challenging and enriching my skills. This is the page I made, which I use the skill I learn from UDEMY online BootCamp Class.";    
+var aboutContent = "The content of the about page.<br> First, let me introduce myself. <br><br>My name is JunBin Liang. A first year student in CUNY queens college who majoring mathmatical and computer science. I like to learn a lot of new things for challenging and enriching my skills. This is the page I made by using the skill I learn from UDEMY online BootCamp Class. I will contiunuously update this website. It will include my new skill, project, taken course and so on.";    
 var contactContent="The content of the contact page.<br><br> Number:917-678-4238 <br>Email: junbinliang816@gmail.com";
 var homeContent="This is the main page.<br>Write Your Journal below<br>";
  

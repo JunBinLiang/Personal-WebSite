@@ -6,12 +6,13 @@ console.log("Running Database");
 const fruitSchema=new mongoose.Schema({
 	price:Number,
 	name:String,
+	
 	rating:{
 		//data validation
 		type:Number,
 		min:1,
 		max:10,
-		required:[true, "it is a required a field with restriction"]
+		required:[true, "it is a required a field(rating) with restriction"]
 	}
 });
 
