@@ -30,7 +30,34 @@
 <body>
 <!–– Loop for all title and content    ––>
 
-<%- include("partial/navInclude") -%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light myNav" style="margin:15px; text-align:center;">
+<div class="navbar-brand" href="">DAILY JOURNAL</div>
+	
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+  
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+     <form action="/home" method="post">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">HOME</a>
+	  </li>
+	 </form>
+	 
+	  <li class="nav-item active">
+        <a class="nav-link" href="/about">ABOUT</a>
+	  </li>
+	   <li class="nav-item active">
+        <a class="nav-link" href="/contact">CONTACT</a>
+	  </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="/fan" style="color:red;font-weight:bold;">FAN</a>
+	  </li>
+	</ul>
+</div>
+</nav>
+
     
 <div class="content">
     <h1>Home</h1>
