@@ -20,11 +20,38 @@
     <link href="css/signin.css" rel="stylesheet">   <!-- Really Important, Static -->
   </head>
 
-<%- include("partial/navInclude") -%>
 
-  <body class="text-center">
+
+  <body class="">
    
-   
+  <nav class="navbar navbar-expand-lg navbar-light bg-light myNav" style="margin:15px; text-align:center;">
+<div class="navbar-brand" href="">DAILY JOURNAL</div>
+	
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+  
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+     <form action="/home" method="post">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">HOME</a>
+	  </li>
+	 </form>
+	 
+	  <li class="nav-item active">
+        <a class="nav-link" href="/about">ABOUT</a>
+	  </li>
+	   <li class="nav-item active">
+        <a class="nav-link" href="/contact">CONTACT</a>
+	  </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="/fan" style="color:red;font-weight:bold;">FAN</a>
+	  </li>
+	</ul>
+</div>
+</nav>
+ 
     <form class="form-signin" action="/" method="post">
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">JunBin Fan</h1>
