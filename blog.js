@@ -24,6 +24,8 @@ const diarySchema=new mongoose.Schema({
 	title:String,
 	content:String,
 });
+
+//collection ->use what sechema
 const diaryCollection=mongoose.model("Diarys",diarySchema);
 
 
@@ -85,7 +87,7 @@ app.post("/compose/ok/:routeParam", function(req,res){  //route parameter, impor
 	var myID=req.body.myid;  
 	console.log(myID);
 	diaryCollection.find({_id:myID},function(err,diarys){ //diarys  is  an  array   ,  first param is query
-		                                                            //find by _id
+		                                                  //find by _id ->unique
 	
 	//_id is unique, diarys is always one? 
 	if(err){
@@ -121,6 +123,7 @@ app.get("/compose/ok/:routeParam", function(req,res){
     var routeTitle=req.params.routeParam;  
     console.log(routeTitle);
 
+//withoue exiting the page: stay same->by using dangerTest, as it exit -> dangerTest=false
 	if(dangerTest){
 		diaryCollection.find({title:routeTitle},function(err,diarys){ 
         res.render("actual",{collection:dangerDiary});  //random refresh
@@ -128,6 +131,7 @@ app.get("/compose/ok/:routeParam", function(req,res){
 	                                                                });	
 	               }    
 	
+	//random refresh-> just the first one by title
 	else{
 	diaryCollection.find({title:routeTitle},function(err,diarys){ 
         res.render("actual",{collection:diarys});  //random refresh
@@ -180,7 +184,7 @@ app.post("/compose", function(request,response){
 	                                        }		
 		
 		if(test&&test2){
-			//save data
+			//save data into database -> to diartCollection
 		const myDiary=new diaryCollection({
 	           title:title,
 			   content:journal
