@@ -71,6 +71,9 @@ app.get("/compose",function(request,response){
 	response.render("compose");
 });
 
+app.get("/fan",function(request,response){
+	response.render("signIn");
+});
 
 
 
@@ -126,7 +129,7 @@ app.get("/compose/ok/:routeParam", function(req,res){
 //withoue exiting the page: stay same->by using dangerTest, as it exit -> dangerTest=false
 	if(dangerTest){
 		diaryCollection.find({title:routeTitle},function(err,diarys){ 
-        res.render("actual",{collection:dangerDiary});  //random refresh
+        res.render("actual",{collection:dangerDiary});  //dangerDiary,from last func
 	
 	                                                                });	
 	               }    
