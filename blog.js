@@ -77,6 +77,12 @@ app.get("/fan",function(request,response){
 
 
 
+app.post("/fan",function(request,response){
+	response.send("I will finish the database befor 2019 Jan 15");
+});
+
+
+
 
 
 
