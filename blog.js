@@ -80,13 +80,16 @@ app.get("/compose",function(request,response){
 	response.render("compose");
 });
 
-app.get("/fan",function(request,response){
+
+app.get("/signIn",function(request,response){
 	response.render("signIn");
 });
 
 
 
-app.post("/fan",function(request,response){
+app.post("/signIn",function(request,response){
+	var gmail=request.body.gmail;
+	var password=request.body.password;
 	response.send("I will finish the database befor 2019 Jan 15");
 });
 
@@ -164,7 +167,7 @@ app.get("/compose/ok/:routeParam", function(req,res){
 
 
 app.post("/compose", function(request,response){
-	var password=request.body.password
+	var password=request.body.password;
 	
 	if(password=="jiejie")
 	{
