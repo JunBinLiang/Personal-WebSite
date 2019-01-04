@@ -20,13 +20,22 @@ var test1=true;
 var dangerDiary=[];
 var dangerTest;
 var dangerTest=false;
+
 const diarySchema=new mongoose.Schema({
 	title:String,
 	content:String,
 });
 
+
+const accountSchema=new mongoose.Schema({
+	mail:String,
+	password:String
+});
+
 //collection ->use what sechema
 const diaryCollection=mongoose.model("Diarys",diarySchema);
+//
+const diaryCollection=mongoose.model("Account",accountSchema);
 
 
 //  Have you tried the tag <%- %> instead of <%= %>?
