@@ -35,7 +35,7 @@ const accountSchema=new mongoose.Schema({
 //collection ->use what sechema
 const diaryCollection=mongoose.model("Diarys",diarySchema);
 //
-const diaryCollection=mongoose.model("Account",accountSchema);
+const accountCollection=mongoose.model("Account",accountSchema);
 
 
 //  Have you tried the tag <%- %> instead of <%= %>?
@@ -207,7 +207,7 @@ app.post("/compose", function(request,response){
 	           title:title,
 			   content:journal
                                            });	
-			
+			 
 	     //save into database		
 	     myDiary.save();
 	     response.redirect("/");}
@@ -250,14 +250,14 @@ app.post("/delete", function(request,response){
 
 
 
-//app.listen(3000||process.env.PORT,function(){
-	//console.log("Success Server");
-	//console.log("rs command re-start server");
-//});
-
-
-app.listen(process.env.PORT,function(){
+app.listen(3000||process.env.PORT,function(){
 	console.log("Success Server");
 	console.log("rs command re-start server");
 });
+
+
+//app.listen(process.env.PORT,function(){
+//	console.log("Success Server");
+//	console.log("rs command re-start server");
+//});
 
