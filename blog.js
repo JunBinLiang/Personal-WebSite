@@ -64,6 +64,11 @@ app.get("/",function(request,response){
 });
 
 
+app.get("/resume",function(request,response){
+	response.render("resume");
+});
+
+
 app.get("/about",function(request,response){
 	dangerDiary.length=0;
 	dangerTest=false;
