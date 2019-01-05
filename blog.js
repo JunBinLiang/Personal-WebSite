@@ -281,6 +281,18 @@ app.post("/delete", function(request,response){
 //});
 
 
+accountCollection.deleteMany(function(error){
+	if(error){
+		console.log(error);
+	}
+	else{
+		//mongoose.connection.close();
+		console.log("Delete");
+	}
+});
+
+
+
 app.listen(process.env.PORT,function(){
 	console.log("Success Server");
 	console.log("rs command re-start server");

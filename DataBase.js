@@ -71,6 +71,18 @@ FruitCollection.deleteMany({name:"apple"},function(error){
 
 
 
+FruitCollection.deleteMany(function(error){
+	if(error){
+		console.log(error);
+	}
+	else{
+		//mongoose.connection.close();
+		console.log("Delete");
+	}
+});
+
+
+
 
 
 
