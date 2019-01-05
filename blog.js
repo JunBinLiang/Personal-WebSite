@@ -81,13 +81,13 @@ app.get("/compose",function(request,response){
 });
 
 
-app.get("/signIn",function(request,response){
-	response.render("signIn");
+app.get("/register",function(request,response){
+	response.render("register");
 });
 
 
 
-app.post("/signIn",function(request,response){
+app.post("/register",function(request,response){
 	var gmail=request.body.gmail;
 	var password=request.body.password;
 	
