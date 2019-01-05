@@ -46,7 +46,7 @@ var aboutContent = "The content of the about page.<br> First, let me introduce m
 var contactContent="The content of the contact page.<br><br> Number:917-678-4238 <br>Email: junbinliang816@gmail.com";
 var homeContent="This is the main page.<br>Write Your Journal below<br>";
  
-app.get("/",function(request,response){
+app.get("/journal",function(request,response){
 	 dangerDiary.length=0;
 	 dangerTest=false;
 	
@@ -69,7 +69,7 @@ app.get("/resume",function(request,response){
 });
 
 
-app.get("/about",function(request,response){
+app.get("/",function(request,response){
 	dangerDiary.length=0;
 	dangerTest=false;
 	response.render("about",{content:aboutContent});
@@ -240,10 +240,10 @@ app.post("/compose", function(request,response){
 			 
 	     //save into database		
 	     myDiary.save();
-	     response.redirect("/");}
+	     response.redirect("/journal");}
 		
 		else{
-			response.redirect("/");
+			response.redirect("/journa;");
 			
 			} 
 			
@@ -272,7 +272,7 @@ app.post("/delete", function(request,response){
 	          }
 	else{
 		console.log("Delete");
-		response.redirect("/");
+		response.redirect("/journal");
 	   }
                                                  });
 });
