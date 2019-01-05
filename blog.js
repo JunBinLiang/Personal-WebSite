@@ -69,7 +69,7 @@ app.get("/resume",function(request,response){
 });
 
 
-app.get("/",function(request,response){
+app.get("/",function(request,response){  //about page
 	dangerDiary.length=0;
 	dangerTest=false;
 	response.render("about",{content:aboutContent});
@@ -286,15 +286,15 @@ app.post("/delete", function(request,response){
 //});
 
 
-//accountCollection.deleteMany(function(error){
-	//if(error){
+accountCollection.deleteMany(function(error){
+	if(error){
 		//console.log(error);
-	//}
-	//else{
+	}
+else{
 		//mongoose.connection.close();
-		//console.log("Delete");
-	//}
-//});
+		console.log("Delete");
+	}
+});
 
 
 
