@@ -69,7 +69,7 @@ FruitCollection.deleteMany({name:"apple"},function(error){
 	}
 });
 
-
+//8.
 
 FruitCollection.deleteMany(function(error){
 	if(error){
