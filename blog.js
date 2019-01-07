@@ -148,7 +148,7 @@ app.post("/compose/ok/:routeParam", function(req,res){  //route parameter, impor
 		  if(diarys.length===0) //not found
 		  { 
 			
-			res.write("<h1>Error</h1>");
+			res.write("<h1>Error Error</h1>");
 		    res.send();
 		  }
 		
