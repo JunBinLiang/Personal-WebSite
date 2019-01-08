@@ -78,7 +78,38 @@
 		animation-iteration-count:3;
 		
 	}
-
+	@keyframes personal1
+		{
+			0%{
+				color:black;
+				font-size: 50px;
+			}
+			
+			25%{
+				color:blue;
+			}
+			50%{
+				color:red;
+				font-size: 30px;
+				transform: translateX(150px);
+			}
+			75%{
+				color:yellow;
+			}
+			100%{
+				color:black;
+				font-size: 50px;
+			}
+		}
+	
+	.navbar-brand{
+		animation-name:personal1;
+		animation-duration:5s;
+		animation-delay:0s;
+		animation-timing-function:linear;
+		animation-iteration-count:3;
+		
+	}
 	
 </style>
 
