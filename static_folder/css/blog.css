@@ -14,3 +14,36 @@
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: orange;
 }
+
+
+	@keyframes personal
+		{
+			0%{
+				color:black;
+				font-size: 50px;
+			}
+			
+			25%{
+				color:blue;
+			}
+			50%{
+				color:red;
+				font-size: 30px;
+			}
+			75%{
+				color:yellow;
+			}
+			100%{
+				color:black;
+				font-size: 50px;
+			}
+		}
+	
+	.navbar-brand{
+		animation-name:personal;
+		animation-duration:5s;
+		animation-delay:0s;
+		animation-timing-function:linear;
+		animation-iteration-count:3;
+		
+	}
