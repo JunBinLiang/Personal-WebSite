@@ -68,7 +68,7 @@ app.get("/resume",function(request,response){
 	response.render("resume");
 });
 app.get("/signin",function(request,response){
-	response.render("'signin'");
+	response.render("signin");
 });
 
 app.get("/",function(request,response){  //about page
