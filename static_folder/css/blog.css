@@ -29,7 +29,7 @@
 			50%{
 				color:red;
 				font-size: 30px;
-				transform: translateX(50px);
+				transform: translateX(150px);
 			}
 			75%{
 				color:yellow;
