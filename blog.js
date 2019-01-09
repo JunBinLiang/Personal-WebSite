@@ -126,6 +126,32 @@ app.post("/register",function(request,response){
 
 
 
+app.post("/signin",function(request,response){
+	var gmail=request.body.gmail;
+	var password=request.body.password;
+	
+	accountCollection.find({mail:gmail,password:password},function(err,diarys){
+	
+		if(diarys.length===0)
+		{
+			response.send("<h1>Wrong PassWord or em...</h1>");
+			
+		}
+		
+		else
+		{
+			response.render("message");
+		}
+	
+	});
+	
+	
+	
+});
+
+
+
+
 
 //only one page, change accoding to the routeParam you passed
 
