@@ -314,15 +314,15 @@ app.post("/delete", function(request,response){
 //});
 
 
-accountCollection.deleteMany(function(error){
-	if(error){
+//accountCollection.deleteMany(function(error){
+	//if(error){
 		//console.log(error);
-	}
-else{
+	//}
+//else{
 		//mongoose.connection.close();
-		console.log("Delete");
-	}
-});
+		//console.log("Delete");
+	//}
+//});
 
    
 
