@@ -103,6 +103,6 @@ app.post("/anypage", function(req,res){
 //https://git.heroku.com/rocky-gorge-12412.git
 
 
-app.listen(process.env.PORT||3000,function(){
+app.listen(3000,function(){
 	console.log("Success Server");
 });
