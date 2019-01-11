@@ -123,14 +123,20 @@
 			}
 		}
 	
-		.content{
+		.content h{
+		opacity:0;
+		animation-duration:1s;
+		animation-delay:0.5s;
+		animation-name:showing;
+		animation-fill-mode:forwards;
+	}
+			.content p{
 		opacity:0;
 		animation-duration:1s;
 		animation-delay:1s;
 		animation-name:showing;
 		animation-fill-mode:forwards;
 	}
-	
 </style>
 
 
@@ -150,7 +156,7 @@
 <br>
 </div>
 
-<button type="button" class="btn btn-danger animation" style="color:white; font-size:50px;"><a href="/resume">Resume</a></button>	
+<button type="button" class="btn btn-danger animation" style="color:white; font-size:50px;margin-left:7%; margin-right:7%; margin-top:3%;"><a href="/resume">Resume</a></button>	
 			
 </body>
 </html>
