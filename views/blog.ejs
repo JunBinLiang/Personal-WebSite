@@ -19,6 +19,37 @@
 		text-decoration:none;
 	}
 	
+		@keyframes showing
+		{
+			
+			100%{
+				opacity:1;
+			}
+		}
+	
+		.content .home{
+		opacity:0;
+		animation-duration:1s;
+		animation-delay:0.5s;
+		animation-name:showing;
+		animation-fill-mode:forwards;
+	}
+			.content .homeContent{
+		opacity:0;
+		animation-duration:1s;
+		animation-delay:1s;
+		animation-name:showing;
+		animation-fill-mode:forwards;
+	}
+	
+	.content form{
+		opacity:0;
+		animation-duration:1s;
+		animation-delay:1.5s;
+		animation-name:showing;
+		animation-fill-mode:forwards;
+	}
+	
 </style>
 </head>
 
@@ -34,8 +65,8 @@
 <%- include("partial/navInclude") -%>
     
 <div class="content">
-    <h1>Home</h1>
-    <p><%- content %></p>
+    <h1 class="home">Home</h1>
+    <p class="homeContent"><%- content %></p>
     <button class="btn-lg btn-danger"><a class="compose" href="/compose">Writing Link</a></button>
     <br><br>
     
