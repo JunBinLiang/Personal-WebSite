@@ -65,9 +65,13 @@ app.get("/journal",function(request,response){
 
 
 app.get("/resume",function(request,response){
+	dangerDiary.length=0;
+	 dangerTest=false;
 	response.render("resume");
 });
 app.get("/signin",function(request,response){
+	dangerDiary.length=0;
+	 dangerTest=false;
 	response.render("signin");
 });
 
@@ -84,11 +88,16 @@ app.get("/contact",function(request,response){
 });
 
 app.get("/compose",function(request,response){
+	dangerDiary.length=0;
+	 dangerTest=false;
 	response.render("compose");
 });
 
 
 app.get("/register",function(request,response){
+
+	dangerDiary.length=0;
+	 dangerTest=false;
 	response.render("register");
 });
 
@@ -207,7 +216,7 @@ app.get("/compose/ok/:routeParam", function(req,res){
 	                                                                });	
 	               }    
 	
-	//random refresh-> just the first one by title
+	//random refresh-> just the first one by title, general finding
 	else{
 	diaryCollection.find({title:routeTitle},function(err,diarys){ 
         res.render("actual",{collection:diarys});  //random refresh
