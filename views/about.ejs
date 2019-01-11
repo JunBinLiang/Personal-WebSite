@@ -115,6 +115,22 @@
 		
 	}
 	
+	@keyframes showing
+		{
+			
+			100%{
+				opacity:1;
+			}
+		}
+	
+		.content{
+		opacity:0;
+		animation-duration:1s;
+		animation-delay:1s;
+		animation-name:showing;
+		animation-fill-mode:forwards;
+	}
+	
 </style>
 
 
@@ -132,10 +148,9 @@
 <h1 class="keyAnimation">About</h1>
 <p><%- content %></p>
 <br>
-<button type="button" class="btn btn-danger animation" style="color:white; font-size:50px;"><a href="/resume">Resume</a></button>	
 </div>
 
-
+<button type="button" class="btn btn-danger animation" style="color:white; font-size:50px;"><a href="/resume">Resume</a></button>	
 			
 </body>
 </html>
