@@ -95,16 +95,18 @@ app.get("/resume",function(request,response){
 	response.render("resume");
 });
 app.get("/signin",function(request,response){
+	
 	if(sign){
 		response.render("leaveMessage");
+		
 	}
-	sign=false;
-	dangerDiary.length=0;
-	 dangerTest=false;
 	else
 	{
 	response.render("signin");
 	}
+	sign=false;
+	dangerDiary.length=0;
+	 dangerTest=false;
 });
 
 app.get("/",function(request,response){  //about page
@@ -434,10 +436,10 @@ app.post("/delete", function(request,response){
 
 
 
-//app.listen(3000||process.env.PORT,function(){
-//	console.log("Success Server");
-//	console.log("rs command re-start server");
-//});
+app.listen(3000||process.env.PORT,function(){
+	console.log("Success Server");
+	console.log("rs command re-start server");
+});
 
 
 //accountCollection.deleteMany(function(error){
