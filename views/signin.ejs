@@ -21,8 +21,39 @@
 	 {
 		 margin-bottom:10px;
 	 }
-
 	
+	 h1{
+		 text-align:center;
+		 font-size:50px;
+		 animation-name:moving;
+		animation-duration:5s;
+		animation-delay:0s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;
+	 }
+	
+	 @keyframes moving
+		{
+			0%{
+				color:black;
+			}
+			
+			25%{
+				color:blue;
+				transform: translateX(150px);
+			}
+			50%{
+				color:red;
+			}
+			75%{
+				color:yellow;
+				transform: translateX(-150px);
+			}
+			100%{
+				color:black;
+				font-size: 40px;
+			}
+		}
 	
 </style>
  
@@ -32,6 +63,8 @@
 
 
 <body>
+	<h1>Leave Me A Message</h1>
+
 	<form action="/signin" method="post">
 	
     <input name="gmail" type="email" name="emailAddress" id="inputEmail" class="form-control myFocus1" placeholder="Email address" required autofocus>
