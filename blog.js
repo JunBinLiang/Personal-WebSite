@@ -134,17 +134,32 @@ app.get("/secret/123456",function(request,response){
 
 
 
+
+
 app.post("/myMessage",function(request,response){
    
 	var secretPassword=request.body.messagePassord;
 	
 	   if(secretPassword==="woxihuanjiejie")
 	   {
-		   response.render("myMessage");
+		  leaveMessageCollection.find(function(err,leaves){ //fruits  is  an  array
+	         if(err)
+		     {
+	    	           console.log(err);
+	         }
+	         else
+			 {
+			            response.render("myMessage",{collection:leaves});
+	         }
+	
+                                                           });
+
+		   
 		   
 	   }
 	
-	   else{
+	  else
+	   {
 	   response.send("What are you Doing");
 	   }
 
