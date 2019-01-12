@@ -115,11 +115,17 @@ footer {
 	}
 	
 	.a:hover{
-		transition:transform 3s 1s;
 		color:white;
 		background-color:black;
 		border-radius:10px;
-		transform: scale(1.5);
+    -webkit-transition:-webkit-transform 3s 1s;
+    transition:-webkit-transform 3s 1s;
+    -o-transition:transform 3s 1s;
+    transition:transform 3s 1s;
+    transition:transform 3s 1s, -webkit-transform 3s 1s;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
 	}
 	
 </style>
