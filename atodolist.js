@@ -33,9 +33,6 @@ app.use(express.static("static_folder"));
 //var items=[];
 
 
-app.get("/include",function(request,response){
-	response.render("useInclude");
-});
 
 
 

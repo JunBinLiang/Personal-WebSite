@@ -42,6 +42,20 @@ const accountCollection=mongoose.model("Account",accountSchema);
 //  <%= escapes html by default (therefore your br tag is changed to it's escaped equivalent).
 
 
+
+
+//to do list
+const itemSchema=new mongoose.Schema({
+    item:String
+});
+
+const itemCollection=mongoose.model("ItemsCollection",itemSchema);
+
+
+
+
+
+
 var aboutContent = "The content of the about page.<br> First, let me introduce myself. <br><br>My name is JunBin Liang. A first year student in CUNY queens college who majoring mathmatical and computer science. I like to learn a lot of new things for challenging and enriching my skills. This is the page I made by using the skill I learn from UDEMY online BootCamp Class. I will contiunuously update this website. It will include my new skill, project, taken course and so on.";    
 var contactContent="The content of the contact page.<br><br> Number:917-678-4238 <br>Email: junbinliang816@gmail.com";
 var homeContent="This is the main page.<br>Write Your Journal below<br>";
@@ -334,6 +348,91 @@ app.post("/delete", function(request,response){
 //});
 
    
+
+
+
+
+
+app.get("/list",function(request,response)
+{
+	 var today=new Date();
+	 var currentDay=today.getDay();  //return as an integer
+	 var day="";
+	
+	if(currentDay===6 || currentDay===0){
+		day="WeekEnd";
+	}
+	else
+	{
+		day="WeekDay";
+	}
+	
+	// render to page when database is loaded
+	
+	itemCollection.find(function(err,itemsInDB){ //itemsInDB  is  an  array by our database
+	if(err){
+		console.log(err);
+	}
+	else{
+		response.render("list",{date:day, collections:itemsInDB});  //list from directory views,      ejs response
+	                                                            // each pass data must be specified
+	                                                            // collections -> items is triggered by each post call
+	    }
+	
+                                             });
+	
+	
+
+});   
+  
+    
+
+app.post("/todolist", function(req,res){
+	  var adding=req.body.item;
+     
+	  const myItem=new itemCollection({
+	       item:adding
+                                     });
+	  
+	  myItem.save();  //save into the database instead of using regular array
+	  
+	  res.redirect("/list");
+});
+
+ 
+
+app.post("/listDelete", function(req,res){
+      var removeID=req.body.chk;   //from the checkbox
+	  itemCollection.deleteOne({_id:removeID},function(err){
+		  if(err){
+			  console.log(err);
+		  }
+	  });
+	  res.redirect("/list");
+});
+
+
+  
+ 
+//https://git.heroku.com/rocky-gorge-12412.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(process.env.PORT,function(){
 	console.log("Success Server");
