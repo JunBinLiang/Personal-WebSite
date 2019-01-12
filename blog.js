@@ -32,6 +32,8 @@ const accountSchema=new mongoose.Schema({
 	password:String
 });
 
+
+
 //collection ->use what sechema
 const diaryCollection=mongoose.model("Diarys",diarySchema);
 //
@@ -53,6 +55,13 @@ const itemCollection=mongoose.model("ItemsCollection",itemSchema);
 
 
 
+
+const leaveMessageSchema=new mongoose.Schema({
+	name:String,
+	message:String
+});
+
+const leaveMessageCollection=mongoose.model("leaveMessageCollection",itemSchema);
 
 
 
@@ -171,6 +180,44 @@ app.post("/signin",function(request,response){
 	
 	
 });
+
+
+
+
+
+
+
+
+app.post("/message",function(request,response){
+	var name=request.body.name;
+	var message=request.body.message;
+	
+	const leavingMessage=new leaveMessageCollection({
+	           name:name,
+			   message:message
+                                           });	
+			 
+	     //save into database		
+	     leavingMessage.save();
+	
+	     response.render("success");
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
