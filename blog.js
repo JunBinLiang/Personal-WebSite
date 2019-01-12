@@ -134,6 +134,24 @@ app.get("/secret/123456",function(request,response){
 
 
 
+app.post("/myMessage",function(request,response){
+   
+	var secretPassword=request.body.messagePassord;
+	
+	   if(secretPassword==="woxihuanjiejie")
+	   {
+		   response.render("myMessage");
+		   
+	   }
+	
+	   else{
+	   response.send("What are you Doing");
+	   }
+
+});
+
+
+
 
 app.post("/register",function(request,response){
 	var gmail=request.body.gmail;
