@@ -126,6 +126,15 @@ app.get("/register",function(request,response){
 
 
 
+app.get("/secret/123456",function(request,response){
+
+	
+	response.render("secret");
+});
+
+
+
+
 app.post("/register",function(request,response){
 	var gmail=request.body.gmail;
 	var password=request.body.password;
