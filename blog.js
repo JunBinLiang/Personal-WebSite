@@ -399,7 +399,7 @@ app.post("/todolist", function(req,res){
 	  res.redirect("/list");
 });
 
- 
+  
 
 app.post("/listDelete", function(req,res){
       var removeID=req.body.chk;   //from the checkbox
