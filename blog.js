@@ -200,7 +200,7 @@ app.post("/message",function(request,response){
 	     //save into database		
 	     leavingMessage.save();
 	
-	     response.render("success");
+	     response.render("success1");
 	
 });
 
