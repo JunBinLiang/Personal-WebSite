@@ -355,17 +355,6 @@ app.post("/delete", function(request,response){
 
 app.get("/list",function(request,response)
 {
-	 var today=new Date();
-	 var currentDay=today.getDay();  //return as an integer
-	 var day="";
-	
-	if(currentDay===6 || currentDay===0){
-		day="WeekEnd";
-	}
-	else
-	{
-		day="WeekDay";
-	}
 	
 	// render to page when database is loaded
 	
@@ -374,7 +363,7 @@ app.get("/list",function(request,response)
 		console.log(err);
 	}
 	else{
-		response.render("list",{date:day, collections:itemsInDB});  //list from directory views,      ejs response
+		response.render("list",{ collections:itemsInDB});  //list from directory views,      ejs response
 	                                                            // each pass data must be specified
 	                                                            // collections -> items is triggered by each post call
 	    }
