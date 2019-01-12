@@ -163,7 +163,7 @@ app.post("/signin",function(request,response){
 		
 		else
 		{
-			response.render("message");
+			response.render("leaveMessage");
 		}
 	
 	});
