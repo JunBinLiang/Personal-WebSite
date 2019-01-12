@@ -153,9 +153,6 @@ app.post("/myMessage",function(request,response){
 	         }
 	
                                                            });
-
-		   
-		   
 	   }
 	
 	  else
