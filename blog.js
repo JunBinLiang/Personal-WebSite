@@ -20,7 +20,7 @@ var test1=true;
 var dangerDiary=[];
 var dangerTest;
 var dangerTest=false;
-
+var sign=false;
 const diarySchema=new mongoose.Schema({
 	title:String,
 	content:String,
@@ -70,6 +70,7 @@ var contactContent="The content of the contact page.<br><br> Number:917-678-4238
 var homeContent="This is the main page.<br>Write Your Journal below<br>";
  
 app.get("/journal",function(request,response){
+	 sign=false;
 	 dangerDiary.length=0;
 	 dangerTest=false;
 	
@@ -88,29 +89,40 @@ app.get("/journal",function(request,response){
 
 
 app.get("/resume",function(request,response){
+	sign=false;
 	dangerDiary.length=0;
 	 dangerTest=false;
 	response.render("resume");
 });
 app.get("/signin",function(request,response){
+	if(sign){
+		response.render("leaveMessage");
+	}
+	sign=false;
 	dangerDiary.length=0;
 	 dangerTest=false;
+	else
+	{
 	response.render("signin");
+	}
 });
 
 app.get("/",function(request,response){  //about page
+	sign=false;
 	dangerDiary.length=0;
 	dangerTest=false;
 	response.render("about",{content:aboutContent});
 });
 
 app.get("/contact",function(request,response){
+	sign=false;
 	dangerDiary.length=0;
 	dangerTest=false;
 	response.render("contact",{content:contactContent});
 });
 
 app.get("/compose",function(request,response){
+	sign=false;
 	dangerDiary.length=0;
 	 dangerTest=false;
 	response.render("compose");
@@ -118,7 +130,7 @@ app.get("/compose",function(request,response){
 
 
 app.get("/register",function(request,response){
-
+	sign=false;
 	dangerDiary.length=0;
 	 dangerTest=false;
 	response.render("register");
@@ -128,7 +140,9 @@ app.get("/register",function(request,response){
 
 app.get("/secret/123456",function(request,response){
 
-	
+	sign=false;
+	dangerDiary.length=0;
+	 dangerTest=false;
 	response.render("secret");
 });
 
@@ -211,6 +225,7 @@ app.post("/signin",function(request,response){
 		
 		else
 		{
+			sign=true;
 			response.render("leaveMessage");
 		}
 	
@@ -219,7 +234,6 @@ app.post("/signin",function(request,response){
 	
 	
 });
-
 
 
 
@@ -305,6 +319,9 @@ app.post("/compose/ok/:routeParam", function(req,res){  //route parameter, impor
 
 
 app.get("/compose/ok/:routeParam", function(req,res){ 
+	  sign=false;
+	  dangerDiary.length=0;
+	  dangerTest=false;
     var routeTitle=req.params.routeParam;  
     console.log(routeTitle);
 
@@ -423,16 +440,24 @@ app.post("/delete", function(request,response){
 //});
 
 
-//accountCollection.deleteMany(function(error){
-	//if(error){
+accountCollection.deleteMany(function(error){
+	if(error){
 		//console.log(error);
-	//}
-//else{
+	}
+else{
 		//mongoose.connection.close();
 		//console.log("Delete");
-	//}
-//});
-
+	}
+});
+leaveMessageCollection.deleteMany(function(error){
+	if(error){
+		//console.log(error);
+	}
+else{
+		//mongoose.connection.close();
+		//console.log("Delete");
+	}
+});
    
 
 
@@ -440,7 +465,9 @@ app.post("/delete", function(request,response){
 
 
 app.get("/list",function(request,response)
-{
+{    sign=false;
+	 dangerDiary.length=0;
+	 dangerTest=false;
 	
 	// render to page when database is loaded
 	
