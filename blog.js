@@ -363,7 +363,7 @@ app.get("/list",function(request,response)
 		console.log(err);
 	}
 	else{
-		response.render("list",{ collections:itemsInDB});  //list from directory views,      ejs response
+		response.render("list",{collections:itemsInDB});  //list from directory views,      ejs response
 	                                                            // each pass data must be specified
 	                                                            // collections -> items is triggered by each post call
 	    }
