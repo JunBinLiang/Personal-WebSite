@@ -436,10 +436,10 @@ app.post("/delete", function(request,response){
 
 
 
-app.listen(3000||process.env.PORT,function(){
-	console.log("Success Server");
-	console.log("rs command re-start server");
-});
+//app.listen(3000||process.env.PORT,function(){
+	//console.log("Success Server");
+	//console.log("rs command re-start server");
+//});
 
 
 //accountCollection.deleteMany(function(error){
@@ -519,7 +519,6 @@ app.post("/listDelete", function(req,res){
   
  
 //https://git.heroku.com/rocky-gorge-12412.git
-
 
 
 
