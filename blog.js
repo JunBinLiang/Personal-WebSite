@@ -61,7 +61,7 @@ const leaveMessageSchema=new mongoose.Schema({
 	message:String
 });
 
-const leaveMessageCollection=mongoose.model("leaveMessageCollection",itemSchema);
+const leaveMessageCollection=mongoose.model("leaveMessageCollection",leaveMessageSchema);
 
 
 
