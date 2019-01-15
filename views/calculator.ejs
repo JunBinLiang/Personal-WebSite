@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+ 
+	<style>
+		html{
+			background-color: aqua;
+		}
+		.calculator{
+			margin:auto;
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			height:500px;
+			
+		}
+		
+		button{
+			margin-right:0px;
+			text-align:center;
+			width:80px;
+			height:80px;
+			font-size:20px;
+			border-radius: 5px;
+			background-color: coral;
+		}
+	
+	
+	</style>
+</head>
+
+<body>
+  <h1 id="result" style="text-align:center;">Result</h1>
+  
+   
+<div class="calculator">
+<div>
+<div>
+   
+	   <button id="zero">0</button>
+   
+	   <button id="point">.</button>
+   
+	   <button id="equal">=</button>
+   
+</div>
+
+<div>
+    <button id="one">1</button>
+	<button id="two">2</button>
+	<button id="three">3</button> 
+</div>
+
+<div>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+</div>
+
+ <div>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="night">9</button>
+</div>
+</div>
+	
+   <div class="operator" style="margin-left:4px;">
+	   <div>
+		   <button id="jia">+</button>
+	   </div>
+	    <div>
+		   <button id="jian">-</button>
+	   </div>
+	     <div>
+		   <button id="cheng">*</button>
+	   </div>  <div>
+			 <button id="chu">/</button>  </div>
+	</div>
+	   
+	   
+  </div>
+
+
+</body>
+
+<footer style="margin-top:50;">
+JunBin Created
+</footer>
+
+<script type="text/javascript">
+var decimalpoint=false;
+var decimal=true;
+var minus=false;
+var firsttime=1;
+var numbe0;;	
+var result=0;
+var show=0;
+var mul=1;
+var operator=false;
+var myoperator="";
+var decimalcounter=10;
+	
+	              //if(myoperator==="+"){result=result+show;}
+				 // if(myoperator==="-"){result=result-show;}
+				 //if(myoperator==="*"){result=result*show;}
+				 //if(myoperator==="/"){result=result/show;}
+		         // if(myoperator===""){result=show;}
+var addListener=function()
+{
+		document.getElementById("zero").addEventListener("click",function(){
+		
+			operator=true;
+			number=0;
+			if(minus)
+			{
+				number=0;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+		       
+				    
+			document.getElementById("result").innerHTML=show;
+		
+		});
+		document.getElementById("one").addEventListener("click",function(){
+			
+			operator=true;
+			number=1;
+			if(minus)
+			{
+				number=-1;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			 			 
+              
+			document.getElementById("result").innerHTML=show;
+		});
+			
+	    document.getElementById("two").addEventListener("click",function(){
+			 
+			operator=true;
+				number=2;
+			    if(minus)
+			{
+				number=-2;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			     
+			    document.getElementById("result").innerHTML=show;
+		});
+			
+	   document.getElementById("three").addEventListener("click",function(){
+		     
+			operator=true;
+				number=3;
+		       if(minus)
+			{
+				number=-3;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					console.log(show);console.log(decimalcounter);
+					decimalcounter*=10;
+				}
+			  
+			}document.getElementById("result").innerHTML=show;
+		});
+			
+	   document.getElementById("four").addEventListener("click",function(){
+		        
+			operator=true;
+				number=4;
+		       if(minus)
+			{
+				number=-4;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+		         
+		        document.getElementById("result").innerHTML=show;
+		});
+			
+	   document.getElementById("five").addEventListener("click",function(){
+		        
+		        operator=true;
+				number=5;
+		        if(minus)
+			{
+				number=-5;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+		         
+		        document.getElementById("result").innerHTML=show;
+		});
+			
+	    document.getElementById("six").addEventListener("click",function(){
+			
+			   operator=true;
+				number=6;
+			    if(minus)
+			{
+				number=-6;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			    
+			    document.getElementById("result").innerHTML=show;
+		});
+			
+	    document.getElementById("seven").addEventListener("click",function(){
+			  
+			operator=true;
+				number=7;
+			    if(minus)
+			{
+				number=-7;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			    document.getElementById("result").innerHTML=show;
+		});
+			
+	    document.getElementById("eight").addEventListener("click",function(){
+			    
+			operator=true;
+				number=8;
+      if(minus)
+			{
+				number=-8;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			     
+			    document.getElementById("result").innerHTML=show;
+		});
+			
+	    document.getElementById("night").addEventListener("click",function(){
+			  
+			operator=true;
+				number=9;
+			   if(minus)
+			{
+				number=-9;
+				if(!decimalpoint){
+				show=number+show*10;minus=false; 
+				                 }
+				else{
+					show=number/decimalcounter+show;minus=false; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			else
+			{
+				if(!decimalpoint){
+				show=number+show*10; 
+				                 }
+				else{
+					show=number/decimalcounter+show; 
+					decimalcounter*=10;
+				}
+			  
+			}
+			    
+			    document.getElementById("result").innerHTML=show;
+		});
+			
+	
+	
+	  //decimal
+	    document.getElementById("point").addEventListener("click",function(){
+		   
+			if(decimal){
+				
+				if(show==0){
+					document.getElementById("result").innerHTML=".";
+				}
+				else{
+					document.getElementById("result").innerHTML=(show+".");
+				}
+				
+			   decimalpoint=true;
+			   decimal=false;
+		   }
+		});
+			
+	
+	
+	
+	    document.getElementById("equal").addEventListener("click",function(){
+		     if(operator){
+				document.getElementById("result").innerHTML="=";
+				 
+				 if(myoperator==="+"){result=result+show;}
+				 if(myoperator==="-"){result=result-show;}
+				 if(myoperator==="*"){result=result*show;}
+				 if(myoperator==="/"){result=result/show;}
+				 if(myoperator===""){result=show;}
+				 
+				 
+			setTimeout(function(){
+				document.getElementById("result").innerHTML=result;
+				result=0;
+			                      },500);
+			}
+			myoperator="";
+			operator=false;
+			show=0;
+			firsttime=1;
+			minus=false;
+			decimalpoint=false;
+			decimal=true;
+			decimalcounter=10;
+		});
+			
+	    document.getElementById("jia").addEventListener("click",function(){
+			if(operator){
+				document.getElementById("result").innerHTML="+";
+				 if(myoperator==="+"){result=result+show;}
+				 if(myoperator==="-"){result=result-show;}
+				 if(myoperator==="*"){result=result*show;}
+				 if(myoperator==="/"){result=result/show;}
+		         if(myoperator===""){result=show;}
+				 myoperator="+";
+				 minus=false;
+				 decimalpoint=false;
+			     decimal=true;
+			     decimalcounter=10;
+			}
+			
+			operator=false;
+			show=0;
+		
+		});
+			
+	    document.getElementById("jian").addEventListener("click",function(){
+			if(operator){
+				document.getElementById("result").innerHTML="-";
+				if(myoperator==="+"){result=result+show;}
+				 if(myoperator==="-"){result=result-show;}
+				 if(myoperator==="*"){result=result*show;}
+				 if(myoperator==="/"){result=result/show;}
+		         if(myoperator===""){result=show;}
+				
+				myoperator="-";
+				 minus=false;
+				 decimalpoint=false;
+			     decimal=true;
+			     decimalcounter=10;
+			}
+			
+			if(!operator){
+				document.getElementById("result").innerHTML="-";
+				minus=true;
+				
+			}
+		
+		    operator=false;
+			show=0;
+		});
+	  		
+	    document.getElementById("cheng").addEventListener("click",function(){
+			if(operator){
+				document.getElementById("result").innerHTML="*";
+				 if(myoperator==="+"){result=result+show;}
+				 if(myoperator==="-"){result=result-show;}
+				 if(myoperator==="*"){result=result*show;}
+				 if(myoperator==="/"){result=result/show;}
+		         if(myoperator===""){result=show;}
+				myoperator="*";
+				 minus=false;
+				decimalpoint=false;
+			    decimal=true;
+			   decimalcounter=10;
+			}
+			
+			
+			
+			operator=false;
+			show=0;
+		});
+			
+	    document.getElementById("chu").addEventListener("click",function(){
+			
+			if(operator){
+				document.getElementById("result").innerHTML="/";
+				 if(myoperator==="+"){result=result+show;}
+				 if(myoperator==="-"){result=result-show;}
+				 if(myoperator==="*"){result=result*show;}
+				 if(myoperator==="/"){result=result/show;}
+		         if(myoperator===""){result=show;}
+				myoperator="/";
+				 minus=false;
+				 decimalpoint=false;
+			     decimal=true;
+			     decimalcounter=10;
+			}
+			
+			
+			operator=false;
+			show=0;
+		
+		});
+}
+	
+
+	
+	
+addListener();
+	
+	
+	
+	
+	
+	
+
+    
+</script> 
+
+
+
+
+
+
+
+
+
+</html>

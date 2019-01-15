@@ -86,7 +86,12 @@ app.get("/journal",function(request,response){
 
 
 });
-
+app.get("/calculator",function(request,response){
+	sign=false;
+	dangerDiary.length=0;
+	 dangerTest=false;
+	response.render("calculator");
+});
 
 app.get("/resume",function(request,response){
 	sign=false;
