@@ -102,14 +102,14 @@ app.get("/resume",function(request,response){
 app.get("/signin",function(request,response){
 	
 	if(sign){
-		response.render("leaveMessage");
+		response.render("leaveMessage");  //signing state
 		
 	}
 	else
 	{
-	response.render("signin");
+	response.render("signin");   //when you exit
 	}
-	sign=false;
+
 	dangerDiary.length=0;
 	 dangerTest=false;
 });
