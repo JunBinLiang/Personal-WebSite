@@ -327,8 +327,7 @@ app.post("/compose/ok/:routeParam", function(req,res){  //route parameter, impor
 
 app.get("/compose/ok/:routeParam", function(req,res){ 
 	  sign=false;
-	  dangerDiary.length=0;
-	  dangerTest=false;
+	  
     var routeTitle=req.params.routeParam;  
     console.log(routeTitle);
 
@@ -540,7 +539,7 @@ app.post("/listDelete", function(req,res){
 
 
 
-
+//process.env.PORT
 
 app.listen(process.env.PORT,function(){
 	console.log("Success Server");
