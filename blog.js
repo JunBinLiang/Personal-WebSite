@@ -196,7 +196,7 @@ app.get("/messageAPI",function(req,res){
 	});
 });
 
-app.get("apiEJS",function(req,res){
+app.get("/apiEJS",function(req,res){
 	
 	res.render("api");
 });
