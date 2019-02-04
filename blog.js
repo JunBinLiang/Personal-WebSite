@@ -183,6 +183,18 @@ app.post("/myMessage",function(request,response){
 
 });
 
+app.get("/messageAPI",function(req,res){
+	
+	leaveMessageCollection.find(function(err,leaves){
+		if(err){
+			console.log(err);
+		}
+		else{
+			res.json(leaves);
+		}
+		
+	});
+});
 
 
 
